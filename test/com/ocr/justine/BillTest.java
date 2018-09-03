@@ -56,10 +56,6 @@ public class BillTest {
 
     }
 
-    @Test
-    public void Given_emptyProductList_generatingBill_Then_throwsException() {
-        Bill bill = new Bill(customer, lowCostRelayDelivery);
-        assertThrows(NoProductInBillException.class, () -> bill.generate(writerMock));
-    }
+
 
 }
