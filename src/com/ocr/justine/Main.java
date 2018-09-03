@@ -8,6 +8,11 @@ public class Main {
       System.out.println("coucou");
 
       Product tv = new Television("TV Samsung UE49MU6292", "Smart TV LED incurvée 49\"", 599, 49, "LED");
-     System.out.println(tv.getName());
+
+     DirectDelivery directDelivery = new DirectDelivery();
+     System.out.println(directDelivery.getPrice());
+
+     ExpressDelivery livraisonExpress = new ExpressDelivery("Aix");
+        System.out.println(livraisonExpress.getPrice());
     }
 }

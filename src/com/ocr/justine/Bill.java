@@ -5,6 +5,7 @@ import java.util.Map;
 public class Bill {
     private Customer customer;
     private Map<Product,Integer> products;
+    private Delivery delivery;
 
     /**
      * Add a product with a quantity in the bill
@@ -12,6 +13,7 @@ public class Bill {
      * @param quantity quantity of the product
      */
     public void addProduct(Product product, Integer quantity){
+
         this.products.put(product, quantity);
     }
 
@@ -30,9 +32,10 @@ public class Bill {
      * Constructor for bill
      * @param customer
      */
-    public Bill(Customer customer){
+    public Bill(Customer customer, Delivery delivery){
 
         this.customer = customer;
+        this.delivery = delivery;
     }
 
 
