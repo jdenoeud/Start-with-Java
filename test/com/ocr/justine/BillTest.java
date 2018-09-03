@@ -30,21 +30,36 @@ public class BillTest {
     private Customer customer = new Customer("Juste Leblanc", "19 rue Germain Pilon, Paris");
     private Delivery lowCostRelayDelivery = new RelayDelivery(27);
 
-    @Test
-    public void Given_2productsAndDelivery_generatingBill_ThenGetGoodTotal() {
-        Bill bill = new Bill(customer, lowCostRelayDelivery);
-        bill.addProduct(cafe, 1);
-        bill.addProduct(tv, 1);
-        assertEquals(683.98, bill.getTotal(), 0.01);
-    }
 
     @Test
-    public void Given_2productsAndDelivery_generatingBill_ThenGetGoodTotal() {
+
+    public void Given_2productsAndDelivery_When_generatingBill_Then_getGoodLineNumber() {
+
         Bill bill = new Bill(customer, lowCostRelayDelivery);
-        bill.addProduct(cafe, 1);
         bill.addProduct(tv, 1);
+        bill.addProduct(tv, 1);
+        bill.generate(writerMock);
         int lineNumber = output.split("\n").length;
+
         assertEquals(20, lineNumber);
+
+    }
+
+
+    @Test
+
+    public void Given_3productsAndDelivery_When_generatingBill_Then_getGoodTotal() {
+
+        Bill bill = new Bill(customer, lowCostRelayDelivery);
+
+        bill.addProduct(cafe, 1);
+
+        bill.addProduct(tv, 1);
+
+        bill.addProduct(fridge, 1);
+
+        assertEquals(870.98, bill.getTotal(), 0.01);
+
     }
 
 }

@@ -11,7 +11,7 @@ public interface Writer {
      * Write one line
      * @param Line
      */
-    public void writeLine(String Line);
+    public void writeLine(String line);
 
     /**
      * Stop writing process
