@@ -1,8 +1,13 @@
 package com.ocr.justine;
 
 public class Customer {
-    String fullname;
-    String address;
+    private String fullname;
+    private String address;
+
+    public  Customer(String fullname, String address){
+        this.fullname = fullname;
+        this.address = address;
+    }
 
     public String getFullname() {
         return fullname;
@@ -11,4 +16,6 @@ public class Customer {
     public String getAddress() {
         return address;
     }
+
+
 }
