@@ -10,9 +10,7 @@ public class Main {
         Customer customer = new Customer("Juste Leblanc", "19 rue Germain Pilon, Paris");
 
         Bill bill = new Bill(customer, new RelayDelivery(27));
-        bill.addProduct(cafe, 1);
-        bill.addProduct(tv, 1);
-        bill.addProduct(fridge, 1);
+
 
         bill.generate(new Writer() {
             @Override
