@@ -19,6 +19,7 @@ public class Bill {
 
 
     public Customer getCustomer() {
+
         return customer;
     }
 
@@ -38,5 +39,12 @@ public class Bill {
         this.delivery = delivery;
     }
 
+    public double getTotal(){
+
+    }
+
+    public void generate (Writer writer){
+
+    }
 
 }
