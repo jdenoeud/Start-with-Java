@@ -21,6 +21,7 @@ public class Bill {
     }
 
     public Map<Product,Integer> getProducts() {
+
         return products;
     }
 
@@ -30,6 +31,7 @@ public class Bill {
      * @param customer
      */
     public Bill(Customer customer){
+
         this.customer = customer;
     }
 
