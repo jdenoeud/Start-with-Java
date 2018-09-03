@@ -14,14 +14,12 @@ public class BillTest {
 
         @Override
         public void writeLine(String line) {
-            output += line + "%n";
+            output += line + "\n";
         }
 
         @Override
         public void stop() {
-
         }
-
     };
 
     private Product cafe = new Product("Philips HD7866/61", "Philips SENSEO Quadrante, Noir - 1 ou 2 tasses", 79.99);
@@ -32,11 +30,10 @@ public class BillTest {
 
 
     @Test
-
     public void Given_2productsAndDelivery_When_generatingBill_Then_getGoodLineNumber() {
 
         Bill bill = new Bill(customer, lowCostRelayDelivery);
-        bill.addProduct(tv, 1);
+        bill.addProduct(cafe, 1);
         bill.addProduct(tv, 1);
         bill.generate(writerMock);
         int lineNumber = output.split("\n").length;
